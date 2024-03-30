@@ -11,15 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1BAB8EEB-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{730248DD-8331-469D-B0C5-8F0251EF96D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMuhasebeServer.Application", "src\Core\OnlineMuhasebeServer.Application\OnlineMuhasebeServer.Application.csproj", "{7CEB13E3-28D8-4EA4-A7D6-92814D3074CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineMuhasebeServer.Application", "src\Core\OnlineMuhasebeServer.Application\OnlineMuhasebeServer.Application.csproj", "{7CEB13E3-28D8-4EA4-A7D6-92814D3074CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMuhasebeServer.Domain", "src\Core\OnlineMuhasebeServer.Domain\OnlineMuhasebeServer.Domain.csproj", "{FE7AF7F8-8200-40A8-98D3-D16D4B58B67F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineMuhasebeServer.Domain", "src\Core\OnlineMuhasebeServer.Domain\OnlineMuhasebeServer.Domain.csproj", "{FE7AF7F8-8200-40A8-98D3-D16D4B58B67F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMuhasebeServer.Presentation", "src\External\OnlineMuhasebeServer.Presentation\OnlineMuhasebeServer.Presentation.csproj", "{D1B390DB-508B-4593-943B-8E138502F610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineMuhasebeServer.Presentation", "src\External\OnlineMuhasebeServer.Presentation\OnlineMuhasebeServer.Presentation.csproj", "{D1B390DB-508B-4593-943B-8E138502F610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMuhasebeServer.Infrastucture", "src\External\OnlineMuhasebeServer.Infrastucture\OnlineMuhasebeServer.Infrastucture.csproj", "{8A153A42-1047-44CE-B919-24F309B74A18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineMuhasebeServer.Infrastucture", "src\External\OnlineMuhasebeServer.Infrastucture\OnlineMuhasebeServer.Infrastucture.csproj", "{8A153A42-1047-44CE-B919-24F309B74A18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMuhasebeServer.WebApi", "src\OnlineMuhasebeServer.WebApi\OnlineMuhasebeServer.WebApi.csproj", "{3B6C9D76-DF48-43F3-9149-927952A40A3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineMuhasebeServer.WebApi", "src\OnlineMuhasebeServer.WebApi\OnlineMuhasebeServer.WebApi.csproj", "{3B6C9D76-DF48-43F3-9149-927952A40A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMuhasebeServer.UnitTest", "tests\OnlineMuhasebeServer.UnitTest\OnlineMuhasebeServer.UnitTest.csproj", "{52B93A6C-2199-45C7-8422-A41A429512EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{3B6C9D76-DF48-43F3-9149-927952A40A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B6C9D76-DF48-43F3-9149-927952A40A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B6C9D76-DF48-43F3-9149-927952A40A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B93A6C-2199-45C7-8422-A41A429512EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B93A6C-2199-45C7-8422-A41A429512EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B93A6C-2199-45C7-8422-A41A429512EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B93A6C-2199-45C7-8422-A41A429512EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{D1B390DB-508B-4593-943B-8E138502F610} = {730248DD-8331-469D-B0C5-8F0251EF96D2}
 		{8A153A42-1047-44CE-B919-24F309B74A18} = {730248DD-8331-469D-B0C5-8F0251EF96D2}
 		{3B6C9D76-DF48-43F3-9149-927952A40A3F} = {426136AE-E9CA-45B6-9066-7436A0097239}
+		{52B93A6C-2199-45C7-8422-A41A429512EB} = {AF4C623F-2D7F-41D6-8682-3D54193D51E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6B9D64F-8DA1-468C-AA13-401C6533E128}

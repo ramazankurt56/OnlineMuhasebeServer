@@ -1,13 +1,21 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
-using OnlineMuhasebeServer.Presentation;
+using OnlineMuhasebeServer.Application;
+using OnlineMuhasebeServer.Domain.Entities.Identity;
+using OnlineMuhasebeServer.Infrastucture;
+using OnlineMuhasebeServer.Presentation.Controllers;
+using OnlineMuhasebeServer.WebApi.Middleware;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddScoped<ExceptionMiddleware>();
 
-// Add services to the container.
-builder.Services.AddPresentation(builder.Configuration);
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers()
+    .AddApplicationPart(Assembly.GetAssembly(typeof(AuthController)));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setup =>
 {
@@ -42,11 +50,25 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseExceptionMiddleware();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+using (var scoped = app.Services.CreateScope())
+{
+    var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+    if (!userManager.Users.Any())
+    {
+        userManager.CreateAsync(new AppUser
+        {
+            UserName = "rkurt",
+            Email = "ramazankurt@gmail.com",
+            Id = Guid.NewGuid(),
+            NameLastName = "Ramazan Kurt"
+        }, "Password12*").Wait();
+    }
+}
 
 app.Run();
